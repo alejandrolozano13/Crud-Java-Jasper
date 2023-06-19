@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaCrudController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="300.0" layoutY="100.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="344.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="571.0" prefWidth="317.0" stylesheets="@TelaCrudCss.css" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="16.0">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="border" />
+                           </styleClass>
+                           <children>
+                              <Label fx:id="nome_label" layoutX="28.0" layoutY="56.0" text="Nome do cliente">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="crud_nomeCliente" layoutX="26.0" layoutY="81.0" prefHeight="35.0" prefWidth="265.0" promptText="Nome do cliente..." />
+                              <Label fx:id="cpf_label" layoutX="26.0" layoutY="120.0" text="CPF">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="crud_cpfCliente" layoutX="25.0" layoutY="147.0" prefHeight="35.0" prefWidth="265.0" promptText="XXX.XXX.XXX-XX" />
+                              <Label fx:id="data_label" layoutX="24.0" layoutY="199.0" text="Data Marcada">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="crud_ServicoCliente" layoutX="25.0" layoutY="302.0" prefHeight="36.0" prefWidth="266.0" promptText="Escolha..." />
+                              <Label fx:id="servico_label" layoutX="23.0" layoutY="276.0" prefHeight="21.0" prefWidth="109.0" text="Tipo de Serviço">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="telefone_label" layoutX="24.0" layoutY="354.0" text="Telefone">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="crud_TelefoneCliente" layoutX="24.0" layoutY="379.0" prefHeight="34.0" prefWidth="259.0" promptText="XXXXXXXXXXXX" />
+                              <Button fx:id="add_Btn" layoutX="26.0" layoutY="446.0" mnemonicParsing="false" onAction="#add_BtnAcao" prefHeight="38.0" prefWidth="81.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Adicionar" />
+                              <Button fx:id="remove_btn" layoutX="218.0" layoutY="447.0" mnemonicParsing="false" onAction="#aoRemover" prefHeight="38.0" prefWidth="86.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Remover" />
+                              <Button fx:id="update_btn" layoutX="119.0" layoutY="447.0" mnemonicParsing="false" onAction="#updateClientes" prefHeight="38.0" prefWidth="90.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Atualizar" />
+                              <Button fx:id="search_btn" layoutX="25.0" layoutY="505.0" mnemonicParsing="false" onAction="#aoPesquisar" prefHeight="38.0" prefWidth="84.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Pesquisar" />
+                              <Button fx:id="novo_Servico" layoutX="119.0" layoutY="504.0" mnemonicParsing="false" onAction="#aoIncluirNovoServico" prefHeight="40.0" prefWidth="185.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Novo Serviço" />
+                              <DatePicker fx:id="myDatePicker" layoutX="24.0" layoutY="229.0" onAction="#getDate" prefHeight="36.0" prefWidth="265.0" promptText="XX/XX/XX" />
+                              <Button fx:id="novoUsuarioBtn" layoutX="124.0" layoutY="17.0" mnemonicParsing="false" onAction="#aoInserirNovoUsuario" prefHeight="19.0" prefWidth="80.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="+ Admin" />
+                              <ComboBox fx:id="idiomas_combobox" layoutX="15.0" layoutY="17.0" onAction="#aoSelecionarIdioma" prefHeight="30.0" prefWidth="87.0" promptText="Idiomas" style="-fx-background-color: white;" />
+                              <Button fx:id="btnImprimir" layoutX="220.0" layoutY="17.0" mnemonicParsing="false" onAction="#aoImprimir" prefHeight="32.0" prefWidth="83.0" styleClass="btn" stylesheets="@TelaCrudCss.css" text="Imprimir" textFill="#fff7f7" />
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="335.0" layoutY="16.0" orientation="VERTICAL" prefHeight="570.0" prefWidth="15.0" AnchorPane.bottomAnchor="16.0" AnchorPane.topAnchor="16.0" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="19.0" layoutY="17.0" prefHeight="568.0" prefWidth="725.0" stylesheets="@TelaCrudCss.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="17.0">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="border" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="crud_tableView" layoutX="8.0" layoutY="11.0" onMouseClicked="#studentSelectData" prefHeight="550.0" prefWidth="701.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="16.0">
+                                <columns>
+                                  <TableColumn fx:id="crud_col_nomeCliente" prefWidth="120.0" text="Nome Cliente" />
+                                  <TableColumn fx:id="crud_col_CpfCliente" prefWidth="117.0" text="CPF" />
+                                    <TableColumn fx:id="crud_col_Data" prefWidth="136.0" text="Data_Marcada" />
+                                    <TableColumn fx:id="crud_col_Servico" prefWidth="114.0" text="Serviço" />
+                                    <TableColumn fx:id="crud_col_telefone" prefWidth="98.0" text="Telefone" />
+                                    <TableColumn fx:id="crud_col_OrdemServico" prefWidth="120.0" text="Ordem Serviço" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
